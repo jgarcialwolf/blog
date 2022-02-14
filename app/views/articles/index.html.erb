@@ -1,29 +1,14 @@
 <h1>Articles</h1>
 
+Our blog has <%= Article.public_count %> articles and counting!
+
 <ul>
   <% @articles.each do |article| %>
-    <li>
-    <%# beginning of comment %>
-    <% if false %>
-      Option one
-      <a href="/articles/<%= article.id %>">
-        <%= article.title %>
-      </a>
+    <% unless article.archived? %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
     <% end %>
-    <%# end of comment %>
-    
-    <%# beginning of comment %>
-    <% if false %>
-      Option two
-      <a href="<%= article_path(article) %>">
-        <%= article.title %>
-      </a>
-    <% end %>
-    <%# end of comment %>
-
-    <%# Option three   %>
-      <%= link_to article.title, article %>
-    </li>
   <% end %>
 </ul>
 

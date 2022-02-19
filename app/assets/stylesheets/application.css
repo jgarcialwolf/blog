@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+.custom-padding-b {
+  padding-bottom: 10%;
+}
+.custom-height {
+  min-height: 75vh;
+}

@@ -1,0 +1,10 @@
+<div class="container-fluid d-flex flex-column align-items-center justify-content-evenly pt-5 custom-height fs-4">
+  <h1>Articles written by <%= @user.name %>:</h1>
+  <ul class="list-group">
+    <% @articles.each do |article| %>
+      <li class="list-group-item">
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
+  </ul>
+</div>

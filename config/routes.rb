@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'users', to: 'users#index'
   root 'welcome#index'
+  # get 'users', to: 'users#index'
+  # get "/users/:id", to: "users#show"
   
+  resources :users
   resources :articles do
     resources :comments
   end

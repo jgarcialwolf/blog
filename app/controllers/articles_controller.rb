@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   end
   def show
     @article = Article.find(params[:id])
-    @user = User.find(@article.user_id)
+    @user = @article.user
   end
   def new
     @article = Article.new
@@ -35,7 +35,6 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    # redirect_to root_path, status: :see_other
     redirect_to articles_path, status: :see_other
   end
   private

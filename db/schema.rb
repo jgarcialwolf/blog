@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(version: 2022_02_16_141817) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "status"
     t.integer "user_id"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 2022_02_16_141817) do
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
+    t.string "status"
     t.integer "article_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "status"
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
